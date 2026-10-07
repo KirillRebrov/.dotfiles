@@ -11,6 +11,7 @@
     defaultBranch = main
 
 [alias]
+    ps = push origin main
     st = status -sb
     df = diff
     co = checkout
