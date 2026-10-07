@@ -11,7 +11,7 @@ config.font = wezterm.font("DejaVuSansM Nerd Font")
 wezterm.font("DejaVuSansM Nerd Font", { weight = "Bold", italic = true })
 config.font_size = 15
 
--- ??? config.default_prog = { 'zellij' } continue
+-- ??? config.default_prog = { 'zellij' } continue.
 
 config.enable_tab_bar = false
 
