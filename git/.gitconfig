@@ -19,6 +19,7 @@
     cm = commit -m
     lg = log --oneline --graph --decorate
     aa = add .
+	p = "!f() { git aa && git cm \"$1\" && git ps; }; f"
 
 [color]
     ui = true
