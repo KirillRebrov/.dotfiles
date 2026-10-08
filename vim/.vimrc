@@ -1,4 +1,4 @@
-" VIMrc.
+" VIMrc
 
 let &t_SI = "\<Esc>[6 q" " Normal: Block kursor
 let &t_SR = "\<Esc>[4 q" " Insert: Ibeam Cursor
