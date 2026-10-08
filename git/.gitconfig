@@ -1,6 +1,7 @@
 [user]
     name = Kirill Rebrov
     email = 7h3k1k4@gmail.com
+	signingkey = /Users/kika/.ssh/id_ed25519
 
 [core]
     editor = vim
@@ -23,3 +24,7 @@
 
 [color]
     ui = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

@@ -1,4 +1,4 @@
-# Системный мусор macOS
+#Trash_macOS
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -6,18 +6,26 @@
 .Spotlight-V100
 .Trashes
 
-# Временные файлы редакторов (Vim/Neovim)
+#Swap+time_f
 *.swp
 *.swo
 *~
 .netrwhist
 
-# Логи и временные файлы WezTerm
+#log+WezTerm
 wezterm/.wezterm.lua.bak
 *.log
 
-# Файлы с секретами (если решите создать такой файл для токенов)
+#Sec. files
 .env*
 secrets.*
 *.local
+
+#SSH
+.ssh/
+ssh/
+config
+*id_ed25519*
+*id_rsa*
+*.pem
 
