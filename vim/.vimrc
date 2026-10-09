@@ -1,5 +1,11 @@
 " ==========================================
-" 1. VIM PLUGINS (Automatic Bootstrap)
+" 0. GLOBAL DEFINITIONS (Must be defined first)
+" ==========================================
+let g:polyglot_disabled = ['sensible']
+let mapleader = "<space>"
+
+" ==========================================
+" 1. VIM PLUGINS (Automatic Bootstrap & Installation)
 " ==========================================
 
 " Automatic installation of vim-plug if it's missing (perfect for new machines)
@@ -10,15 +16,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-  " Language support and syntax
+  " Language support and syntax highlighting
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'sheerun/vim-polyglot'
   
-  " Status line interface
-  Plug 'vim-airline/vim-airline'
+  " Status line interface (with lazy loading to prevent cold start bugs)
+  Plug 'vim-airline/vim-airline', { 'on': [] }
 call plug#end()
 
-let g:polyglot_disabled = ['sensible']
+" Automatically load airline when entering any file or window
+autocmd BufReadPost,BufNewFile * call plug#load('vim-airline')
 
 " ==========================================
 " 2. CORE SETTINGS & UI
@@ -37,14 +44,12 @@ set noeb
 set ls=2
 set visualbell
 
-" Cursor shapes for different modes
+" Cursor shapes for different modes (Block in Normal, I-Beam in Insert)
 let &t_SI = "\<Esc>[6 q" " Insert: Ibeam Cursor
 let &t_SR = "\<Esc>[4 q" " Replace: Underline Cursor
 let &t_EI = "\<Esc>[2 q" " Normal: Block Cursor
 
-let mapleader = "<space>"
-
-" File management
+" File and buffer management
 set directory=~/.vim/swapfiles// " Where Vim stores swap files
 filetype plugin indent on       " Enable plugins and indents based on filetype
 runtime macros/matchit.vim      " Enable built-in matchit (%)
@@ -74,6 +79,7 @@ let g:go_auto_type_info = 1
 " 4. AIRLINE STATUS LINE CONFIGURATION
 " ==========================================
 let g:airline_powerline_fonts = 1
+let g:airline_experimental = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -87,3 +93,4 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
