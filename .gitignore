@@ -1,0 +1,37 @@
+# === Trash macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# === Swap & Temporary files ===
+*.swp
+*.swo
+*~
+.netrwhist
+
+# === Logs & Shell History ===
+*.log
+wezterm/.wezterm.lua.bak
+.*_history
+.lesshst
+
+# === Secret files & Local configs ===
+.env*
+secrets.*
+*.local
+.gitconfig.local
+.zshrc.local
+
+# === SSH & Cryptography ===
+.ssh/
+ssh/
+/.ssh/config
+*id_ed25519*
+*id_rsa*
+*.pem
+*.key
+*.pub
+

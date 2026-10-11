@@ -1,0 +1,31 @@
+[core]
+    editor = vim
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+
+[init]
+    defaultBranch = main
+
+[alias]
+    ps = push origin main
+    st = status -sb
+    df = diff
+    co = checkout
+    br = branch
+    cm = commit -m
+    lg = log --oneline --graph --decorate
+    aa = add .
+    p = "!f() { git aa && git cm \"$1\" && git ps; }; f"
+
+[color]
+    ui = true
+
+[gpg]
+    format = ssh
+
+[commit]
+    gpgsign = true
+
+[include]
+    path = ~/.gitconfig.local
+
